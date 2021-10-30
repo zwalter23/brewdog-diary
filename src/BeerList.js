@@ -6,10 +6,22 @@ const BeerList = ({ beers }) => {
       {beers.map((beer) => (
         <div className="beer" key={beer.id}>
           <Link to={`/beer/${beer.id}`}>
-            <h2>
-              {beer.id}. {beer.name}
-            </h2>
+            <div className="img-holder">
+              <img
+                src={beer.image_url}
+                alt={beer.name}
+                className="beer-image"
+              ></img>
+            </div>
+            <div className="info">
+              <h2>{beer.name}</h2>
+              <p>{beer.tagline}</p>
+            </div>
           </Link>
+          <span className="btn-holder">
+            <button>Tasted</button>
+            <button>Brewed</button>
+          </span>
         </div>
       ))}
     </div>

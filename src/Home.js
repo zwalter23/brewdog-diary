@@ -27,9 +27,8 @@ const Home = () => {
     <div className="home">
       {beers && <BeerList beers={beers} />}
       <div className="button-holder">
-        <button onClick={previousPage}>-</button>
-        <span>{page}</span>
-        <button onClick={nextPage}>+</button>
+        <aside onClick={previousPage} className="prev"></aside>
+        <aside onClick={nextPage} className="next"></aside>
       </div>
     </div>
   );
