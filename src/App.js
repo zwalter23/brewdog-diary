@@ -1,12 +1,13 @@
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Home from "./Home";
 import BeerDetails from "./BeerDetails";
+import NavBar from "./NavBar";
 
 function App() {
   return (
     <Router>
       <div className="App">
-        {/*<Navbar/> */}
+        <NavBar />
         <div className="content">
           <Switch>
             <Route exact path="/">
@@ -15,6 +16,9 @@ function App() {
             <Route path="/beer/:id">
               <BeerDetails />
             </Route>
+            {/* <Route path="*">
+              <NotFound />
+            </Route> */}
           </Switch>
         </div>
       </div>
