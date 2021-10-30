@@ -1,9 +1,15 @@
+import { Link } from "react-router-dom";
+
 const BeerList = ({ beers }) => {
   return (
     <div className="beer-list">
       {beers.map((beer) => (
         <div className="beer" key={beer.id}>
-          {beer.id}. {beer.name}
+          <Link to={`/beer/${beer.id}`}>
+            <h2>
+              {beer.id}. {beer.name}
+            </h2>
+          </Link>
         </div>
       ))}
     </div>
