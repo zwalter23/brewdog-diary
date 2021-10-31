@@ -2,7 +2,7 @@ import useFetch from "./useFetch";
 import BeerList from "./BeerList";
 import { useState } from "react/cjs/react.development";
 
-const Home = ({ tasted, brewed }) => {
+const Home = ({ tasted, setTasted, brewed, setBrewed }) => {
   const [url, setUrl] = useState("https://api.punkapi.com/v2/beers?per_page=9");
   const beers = useFetch(url);
   const [page, setPage] = useState(1);
@@ -25,7 +25,15 @@ const Home = ({ tasted, brewed }) => {
   }
   return (
     <div className="home">
-      {beers && <BeerList beers={beers} brewed={brewed} tasted={tasted} />}
+      {beers && (
+        <BeerList
+          beers={beers}
+          brewed={brewed}
+          setBrewed={setBrewed}
+          tasted={tasted}
+          setTasted={setTasted}
+        />
+      )}
       <div className="button-holder">
         <aside onClick={previousPage} className="prev"></aside>
         <aside onClick={nextPage} className="next"></aside>

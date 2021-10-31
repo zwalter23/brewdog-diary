@@ -5,7 +5,7 @@ import NavBar from "./NavBar";
 import NotFound from "./NotFound";
 import Tasted from "./Tasted";
 import Brewed from "./Brewed";
-import { useState } from "react/cjs/react.development";
+import Results from "./Results";
 
 function App() {
   const tasted = new Set();
@@ -28,6 +28,9 @@ function App() {
             </Route>
             <Route path="/brewed">
               <Brewed brewed={brewed} />
+            </Route>
+            <Route path="/search">
+              <Results />
             </Route>
             <Route path="*">
               <NotFound />

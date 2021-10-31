@@ -17,7 +17,7 @@ body {
 }
 
 .navbar {
-  padding: 20px;
+  padding: 25px;
   display: flex;
   align-items: center;
   border-bottom: 1px solid #f2f2f2;
@@ -29,7 +29,26 @@ body {
 }
 
 .navbar .links {
+  position: absolute;
+  bottom: 0;
+  right: 0;
   margin-left: auto;
+  padding-right: 20px;
+  padding-bottom: 10px;
+}
+
+#search-bar {
+  display: flex;
+  position: absolute;
+  top: 0;
+  right: 20px;
+}
+
+.search-btn {
+  height: 20px;
+  width: 20px;
+  color: white;
+  background-color: white;
 }
 
 .navbar a {
