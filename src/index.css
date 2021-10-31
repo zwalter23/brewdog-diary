@@ -29,7 +29,12 @@ body {
 }
 
 .navbar .links {
+  position: absolute;
+  bottom: 0;
+  right: 0;
   margin-left: auto;
+  padding-right: 20px;
+  padding-bottom: 10px;
 }
 
 .navbar a {
