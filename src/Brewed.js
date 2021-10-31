@@ -1,15 +1,10 @@
 import { Link } from "react-router-dom";
 
-const BeerList = ({ beers, tasted, brewed }) => {
-  function AddToTasted(beer) {
-    tasted.add(beer);
-  }
-  function AddToBrewed(beer) {
-    brewed.add(beer);
-  }
+const Brewed = ({ brewed }) => {
+  console.log(brewed);
   return (
     <div className="beer-list">
-      {beers.map((beer) => (
+      {Array.from(brewed).map((beer) => (
         <div className="beer" key={beer.id}>
           <Link to={`/beer/${beer.id}`}>
             <div className="img-holder">
@@ -24,14 +19,10 @@ const BeerList = ({ beers, tasted, brewed }) => {
               <p>{beer.tagline}</p>
             </div>
           </Link>
-          <span className="btn-holder">
-            <button onClick={() => AddToTasted(beer)}>Tasted</button>
-            <button onClick={() => AddToBrewed(beer)}>Brewed</button>
-          </span>
         </div>
       ))}
     </div>
   );
 };
 
-export default BeerList;
+export default Brewed;
