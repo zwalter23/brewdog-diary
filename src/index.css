@@ -1,9 +1,19 @@
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap");
 
 body {
-  background-color: rgb(8, 23, 34);
+  background-color: rgb(24, 24, 24);
   font-family: "Quicksand";
   margin: 0;
+}
+
+/* NAVBAR */
+#brewdog-logo {
+  background-image: url("./images/brewdog-logo-with-title.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 70px;
+  width: 270px;
+  margin-right: 20px;
 }
 
 .navbar {
@@ -11,7 +21,7 @@ body {
   display: flex;
   align-items: center;
   border-bottom: 1px solid #f2f2f2;
-  background-color: black;
+  background-color: rgb(12, 12, 12);
   color: white;
   position: fixed;
   width: 100%;
@@ -21,14 +31,18 @@ body {
 .navbar .links {
   margin-left: auto;
 }
+
 .navbar a {
   padding-right: 40px;
   text-decoration: none;
-}
-.navbar a:hover {
-  color: #f1356d;
+  color: white;
 }
 
+.navbar a:hover {
+  color: #1962a1;
+}
+
+/* BEER LIST */
 .beer-list {
   padding-top: 120px;
   margin: 0 auto;
@@ -37,8 +51,13 @@ body {
   flex-wrap: wrap;
 }
 
+.beer-list a {
+  text-decoration: none;
+  color: black;
+}
+
 .beer:hover {
-  box-shadow: 5px 7px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 5px 7px 10px rgba(0, 0, 0, 0.463);
   transition: 0.3s;
 }
 
@@ -62,7 +81,7 @@ body {
   position: absolute;
   height: 100%;
   width: 150px;
-  background-color: #f1356d;
+  background-color: #1962a1;
   border-radius: 7px 0px 0px 7px;
 }
 
@@ -76,6 +95,7 @@ body {
   padding: 1rem;
   padding-top: 0;
 }
+
 .beer-image {
   height: 11rem;
   display: flex;
@@ -88,6 +108,71 @@ body {
   right: 1rem;
 }
 
+.btn-holder button:hover {
+  background-color: #1962a1;
+  color: #fff;
+  border: 0;
+  transition: 0.3s;
+}
+
+.btn-holder button {
+  border: 0;
+  padding: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+  background-color: rgb(136, 136, 136);
+  margin: 0px 0px 0px 5px;
+}
+
+/* BEER DETAILS */
+.beer-details {
+  margin: 0 auto;
+  width: 80%;
+}
+
+.beer-detail {
+  padding-top: 120px;
+  display: flex;
+}
+
+.detail-ingredient-holder {
+  flex-grow: 1;
+  padding: 10px;
+  background-color: #1962a1;
+  border-radius: 7px 0px 0px 7px;
+}
+
+td {
+  font-size: 15px;
+}
+
+.beer-first-brewed-date {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.detail-ingredient-holder h3 {
+  margin: 0;
+}
+
+.beer-ingredients h4,
+li {
+  margin: 0;
+}
+
+.beer-target-gravity {
+  margin: 10px;
+  text-align: center;
+}
+
+.detail-info {
+  padding: 10px;
+  flex-grow: 3;
+  background-color: rgb(255, 255, 255);
+  width: 100%;
+  border-radius: 0 7px;
+}
+/* PAGINATOR */
 .prev,
 .next {
   display: flex;
@@ -113,19 +198,6 @@ body {
   border: 0;
   transition: 0.3s;
 }
-.btn-holder button:hover {
-  background-color: #f1356d;
-  color: #fff;
-  border: 0;
-  transition: 0.3s;
-}
-
-.btn-holder button {
-  border: 0;
-  padding: 8px;
-  border-radius: 8px;
-  cursor: pointer;
-}
 
 .prev {
   cursor: pointer;
@@ -141,9 +213,4 @@ body {
   cursor: pointer;
   right: 0;
   background-image: linear-gradient(to left, #00000060, rgba(255, 255, 255, 0));
-}
-
-.beer-list a {
-  text-decoration: none;
-  color: black;
 }
