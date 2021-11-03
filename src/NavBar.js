@@ -7,6 +7,7 @@ const NavBar = () => {
       <div className="links">
         <Link to="/tasted">Beers I tasted</Link>
         <Link to="/brewed">Beers I brewed</Link>
+        <Link to="/random">Random Beer</Link>
         <Link to="/">Home</Link>
       </div>
     </nav>

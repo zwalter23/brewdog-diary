@@ -6,6 +6,7 @@ import NotFound from "./NotFound";
 import Tasted from "./Tasted";
 import Brewed from "./Brewed";
 import { useState } from "react/cjs/react.development";
+import RandomBeer from "./RandomBeerDetails"
 
 function App() {
   const tasted = new Set();
@@ -28,6 +29,9 @@ function App() {
             </Route>
             <Route path="/brewed">
               <Brewed brewed={brewed} />
+            </Route>
+            <Route path="/random">
+              <RandomBeer />
             </Route>
             <Route path="*">
               <NotFound />
