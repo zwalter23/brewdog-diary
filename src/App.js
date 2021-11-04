@@ -7,8 +7,7 @@ import NotFound from "./NotFound";
 import Tasted from "./Tasted";
 import Brewed from "./Brewed";
 import Results from "./Results";
-import { useState } from "react/cjs/react.development";
-import RandomBeer from "./RandomBeerDetails"
+import RandomBeer from "./RandomBeerDetails";
 
 function App() {
   const [tasted, setTasted] = useState([]);
@@ -39,6 +38,7 @@ function App() {
             </Route>
             <Route path="/search">
               <Results />
+            </Route>
             <Route path="/random">
               <RandomBeer />
             </Route>
