@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { useState } from "react";
 import Home from "./Home";
 import BeerDetails from "./BeerDetails";
 import NavBar from "./NavBar";
@@ -8,8 +9,8 @@ import Brewed from "./Brewed";
 import Results from "./Results";
 
 function App() {
-  const tasted = new Set();
-  const brewed = new Set();
+  const [tasted, setTasted] = useState([]);
+  const [brewed, setBrewed] = useState([]);
 
   return (
     <Router>
@@ -18,7 +19,12 @@ function App() {
         <div className="content">
           <Switch>
             <Route exact path="/">
-              <Home tasted={tasted} brewed={brewed} />
+              <Home
+                tasted={tasted}
+                brewed={brewed}
+                setTasted={setTasted}
+                setBrewed={setBrewed}
+              />
             </Route>
             <Route path="/beer/:id">
               <BeerDetails />

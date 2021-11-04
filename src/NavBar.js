@@ -5,7 +5,7 @@ const NavBar = () => {
   return (
     <nav className="navbar">
       <span id="brewdog-logo"></span>
-      <Search />
+      {/* <Search /> */}
       <div className="links">
         <Link to="/tasted">Beers I tasted</Link>
         <Link to="/brewed">Beers I brewed</Link>

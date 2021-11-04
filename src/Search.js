@@ -1,10 +1,8 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import useFetch from "./useFetch";
 
 const Search = () => {
-  const [filter, setFilter] = useState([]);
-
+  const [filter, setFilter] = useState("");
   function searchQuery() {
     let filterToPass = "";
     const filterValue = document.getElementById("filters").value;
@@ -42,9 +40,9 @@ const Search = () => {
         <option value="ebc_gt">EBC greater than</option>
         <option value="ebc_lt">EBC lower than</option>
       </select>
-      <Link to={`/search?${filter}`}>
-        <button className="search-btn" onClick={searchQuery}></button>
-      </Link>
+      <button className="search-btn" onClick={searchQuery}>
+        <Link to={`/search?${filter}`}></Link>
+      </button>
     </div>
   );
 };

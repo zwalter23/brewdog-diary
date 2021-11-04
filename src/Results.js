@@ -3,13 +3,10 @@ import useFetch from "./useFetch";
 
 const Results = () => {
   const url = window.location.search;
-  const results = useFetch(`https://api.punkapi.com/v2/beers${url}`);
+  console.log(url);
+  const results = useFetch(`https://api.punkapi.com/v2/beers?${url}`);
 
-  return (
-    <div>
-      <BeerList beers={results} />
-    </div>
-  );
+  return <div>{results && <BeerList beers={results} />}</div>;
 };
 
 export default Results;
