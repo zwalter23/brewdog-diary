@@ -1,16 +1,18 @@
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { useState } from "react";
 import Home from "./Home";
 import BeerDetails from "./BeerDetails";
 import NavBar from "./NavBar";
 import NotFound from "./NotFound";
 import Tasted from "./Tasted";
 import Brewed from "./Brewed";
+import Results from "./Results";
 import { useState } from "react/cjs/react.development";
 import RandomBeer from "./RandomBeerDetails"
 
 function App() {
-  const tasted = new Set();
-  const brewed = new Set();
+  const [tasted, setTasted] = useState([]);
+  const [brewed, setBrewed] = useState([]);
 
   return (
     <Router>
@@ -19,7 +21,12 @@ function App() {
         <div className="content">
           <Switch>
             <Route exact path="/">
-              <Home tasted={tasted} brewed={brewed} />
+              <Home
+                tasted={tasted}
+                brewed={brewed}
+                setTasted={setTasted}
+                setBrewed={setBrewed}
+              />
             </Route>
             <Route path="/beer/:id">
               <BeerDetails />
@@ -30,6 +37,8 @@ function App() {
             <Route path="/brewed">
               <Brewed brewed={brewed} />
             </Route>
+            <Route path="/search">
+              <Results />
             <Route path="/random">
               <RandomBeer />
             </Route>
