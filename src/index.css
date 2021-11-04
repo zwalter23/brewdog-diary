@@ -35,6 +35,7 @@ body {
   margin-left: auto;
   padding-right: 20px;
   padding-bottom: 10px;
+
 }
 
 #search-bar {
@@ -49,6 +50,7 @@ body {
   width: 20px;
   color: white;
   background-color: white;
+
 }
 
 .navbar a {
